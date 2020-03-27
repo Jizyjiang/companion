@@ -20,13 +20,13 @@ function heading() {
 	echo -e "\033[1m$1\033[m"
 }
 
-heading "Core"
+heading "内核"
 yarn
 echo
-heading "Bitfocus skeleton"
+heading "Bitfocus 框架"
 yarn --cwd bitfocus-skeleton/
 echo
-heading "Module dependencies"
+heading "Module 依赖"
 
 for module in lib/module/*/; do
 	grep '"dependencies"' ${module}package.json > /dev/null 2>&1 && (
